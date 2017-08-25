@@ -6,13 +6,6 @@ body{
     height: 100%;
 
 }
-.HomeContainer{
-    position: static;
-    margin-top: 1.7rem;
-}
-ion-refresher{
-    font-size: 0.5rem;
-}
 .homeNav{
     width: 100%;
     height: 1rem;
@@ -55,11 +48,15 @@ ion-refresher{
     color: white;
 }
 .navContent{
-    margin-top: 1rem;
+
     width: 100%;
-    height: calc(100% - 1rem - 0.3rem - 1rem);
+    position: fixed;
+    top:1rem;
+    left: 0;
+    height: auto;
     background-color: rgb(47,47,47);
-    margin-bottom: -1rem;
+    /*margin-bottom: -1rem;*/
+    z-index: 20;
 }
 .navContent > div{
     width: 100%;
@@ -104,10 +101,13 @@ ion-refresher{
 .bottomNav{
     width: 100%;
     height: 0.7rem;
-    margin-top: 1rem;
     border-bottom: 1px solid rgba(0,0,0,0.3);
     background: rgba(255,255,255,0.6);
-    position: relative;
+    position: fixed;
+    top:1rem;
+    left: 0;
+    z-index: 10;
+
     line-height: 0.7rem;
 
 
@@ -150,6 +150,7 @@ ion-refresher{
     right: 0.2rem;
     bottom: 1.2rem;
     border-radius: 50%;
+    z-index: 100;
 
 }
 .cardContainer{
@@ -159,7 +160,7 @@ ion-refresher{
     padding-right: 3%;
     background-color: #f2f2f2;
     overflow: hidden;
-    margin-bottom: 1.2rem;
+    padding-bottom: 1.2rem;
 }
 
 .cardContainer >.card{
@@ -240,6 +241,7 @@ footer{
     position: fixed;
     bottom: 0;
     left: 0;
+    z-index: 1;
 
 }
 footer > a{
@@ -285,3 +287,7 @@ footer > a:hover,footer > a:focus,footer > a:checked{
 .geolocation:hover{
     color: red;
 }
+.scroll{
+    margin-top: 1.7rem;
+}
+

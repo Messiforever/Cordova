@@ -67,7 +67,7 @@
     <a class='ion-navicon-round'ng-click='shouNavContent()'></a>
     <a>Messi</a>
     <a>Sign in</a>
-    </nav>
+</nav>
 <div class='navContent'  ng-hide='showBool' >
     <div><input type='text' placeholder='Search'></div>
     <div>Shots</div>
@@ -78,23 +78,22 @@
     <div>Hiring</div>
     <div>More <a class='ion-chevron-right'></a></div>
     <div>Looking to hire a designer?<a>Learn more</a></div>
-    </div>
+</div>
 <div class='bottomNav'>
     <div><a href=''>Popular</a><label class='ion-chevron-down'></label><a href=''>Shots</a><label class='ion-chevron-down'></label><a href=''>Now</a><label class='ion-chevron-down'></label></div>
     <a class='ion-grid' on-tap='ChangeView()'></a>
-    </div>
-    <ion-content class="HomeContainer">
-        <ion-refresher pulling-icon="ion-refresh" pulling-text="下拉刷新" refreshing-text="刷新成功" on-refresh="doRefresh()"></ion-refresher>
-        <ui-view></ui-view>
-    </ion-content>
-    <div class="top ion-chevron-up" ></div>
-    <footer>
-        <a class='ion-edit'></a>
-        <a class='ion-search'></a>
-        <a class='ion-home'  ui-sref="home" id="home"></a>
-        <a class='ion-person'></a>
-        <a class='ion-navigate' ui-sref="map" id="map" on-tap="showMap()"></a>
-    </footer>
+</div>
+    <ui-view></ui-view>
+
+<div class="top ion-chevron-up" ></div>
+
+<footer>
+    <a class='ion-edit'></a>
+    <a class='ion-search'></a>
+    <a class='ion-home'  ui-sref="home" id="home"></a>
+    <a class='ion-person'></a>
+    <a class='ion-navigate' ui-sref="map" id="map" on-tap="showMap()"></a>
+</footer>
 </body>
 <script src="lib/ionic/js/ionic.bundle.min.js"></script>
 <script src="scripts/index.js"></script>

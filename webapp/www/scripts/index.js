@@ -3,8 +3,9 @@
     app.controller("myAppController",["$scope",function ($scope) {
         $scope.$on("$stateChangeSuccess",function (event,tostate,toParmas,formState,formparmas) {
             if(tostate.name == "map"){
-                document.querySelector('.homeNav').style.display = "none";
-                document.querySelector('.bottomNav').style.display = "none";
+                document.querySelector('.homeNav').style.visibility = "hidden";
+                document.querySelector('.bottomNav').style.visibility = "hidden";
+
                 setTimeout(function () {
                     var map = new BMap.Map("allmap");
                     map.centerAndZoom(new BMap.Point(116.331398,39.897445),13);
@@ -64,14 +65,19 @@
                 }
 
             }
+            if(tostate.name == "detailed"){
+                document.querySelector(".homeNav").style.visibility = "hidden";
+                document.querySelector(".bottomNav").style.visibility = "hidden";
+            }
         });
         $scope.$on("$stateChangeSuccess",function (event,tostate,toParmas,formState,formparmas) {
             if(tostate.name == "home"){
-                document.querySelector('.homeNav').style.display = "block";
-                document.querySelector('.bottomNav').style.display = "block";
+                document.querySelector('.homeNav').style.visibility = "visible";
+                document.querySelector('.bottomNav').style.visibility = "visible";
+                document.querySelector(".homeNav").style.visibility = "visible";
+                document.querySelector(".bottomNav").style.visibility = "visible";
                 setTimeout(function () {
                     document.querySelector('#home').style.color = "white";
-
                 },101)
             }
             else {
@@ -301,13 +307,14 @@
          if($scope.showBool == false){
              $scope.showBool = true;
          }else {
+
              $scope.showBool = false;
          }
 
      };
      $scope.getarea=function(){
             baidumap_location.getCurrentPosition(function (result) {
-                // alert(JSON.stringify(result, null, 4));
+                alert(JSON.stringify(result, null, 4));
                 var temp = JSON.stringify(result, null, 4);
                  var myaddr = eval('('+temp+')');
                 $scope.address[0] = myaddr.longitude;
@@ -375,197 +382,200 @@
 
         };
      $scope.doRefresh = function() {
-            setTimeout(function () {
-                $scope.$broadcast('scroll.refreshComplete');
-                $scope.uItem=[
-                    {
-                        'gallery':'img/30.png',
-                        'likeNum':359,
-                        'disNum':22
-                    },
-                    {
-                        'gallery':'img/29.png',
-                        'likeNum':894,
-                        'disNum':125
 
-                    },
-                    {
-                        'gallery':'img/26.jpg',
-                        'likeNum':354,
-                        'disNum':12
+             setTimeout(function () {
+                 $scope.$broadcast('scroll.refreshComplete');
+                 $scope.uItem=[
+                     {
+                         'gallery':'img/30.png',
+                         'likeNum':359,
+                         'disNum':22
+                     },
+                     {
+                         'gallery':'img/29.png',
+                         'likeNum':894,
+                         'disNum':125
 
-                    },
+                     },
+                     {
+                         'gallery':'img/26.jpg',
+                         'likeNum':354,
+                         'disNum':12
 
-                    {
-                        'gallery':'img/28.jpg',
-                        'likeNum':148,
-                        'disNum':12
+                     },
 
-                    },
-                    {
-                        'gallery':'img/27.png',
-                        'likeNum':953,
-                        'disNum':78
+                     {
+                         'gallery':'img/28.jpg',
+                         'likeNum':148,
+                         'disNum':12
 
-                    },
+                     },
+                     {
+                         'gallery':'img/27.png',
+                         'likeNum':953,
+                         'disNum':78
 
-                    {
-                        'gallery':'img/09.png',
-                        'likeNum':795,
-                        'disNum':43
+                     },
 
-                    },
-                    {
-                        'gallery':'img/10.jpg',
-                        'likeNum':529,
-                        'disNum':49
+                     {
+                         'gallery':'img/09.png',
+                         'likeNum':795,
+                         'disNum':43
 
-                    },
-                    {
-                        'gallery':'img/11.jpg',
-                        'likeNum':418,
-                        'disNum':26
+                     },
+                     {
+                         'gallery':'img/10.jpg',
+                         'likeNum':529,
+                         'disNum':49
 
-                    },
-                    {
-                        'gallery':'img/12.png',
-                        'likeNum':936,
-                        'disNum':28
+                     },
+                     {
+                         'gallery':'img/11.jpg',
+                         'likeNum':418,
+                         'disNum':26
 
-                    },
-                    {
-                        'gallery':'img/13.jpg',
-                        'likeNum':852,
-                        'disNum':56
+                     },
+                     {
+                         'gallery':'img/12.png',
+                         'likeNum':936,
+                         'disNum':28
 
-                    },
-                    {
-                        'gallery':'img/02.jpg',
-                        'likeNum':422,
-                        'disNum':20
+                     },
+                     {
+                         'gallery':'img/13.jpg',
+                         'likeNum':852,
+                         'disNum':56
 
-                    },
-                    {
-                        'gallery':'img/03.png',
-                        'likeNum':622,
-                        'disNum':13
+                     },
+                     {
+                         'gallery':'img/02.jpg',
+                         'likeNum':422,
+                         'disNum':20
 
-                    },
-                    {
-                        'gallery':'img/04.jpg',
-                        'likeNum':156,
-                        'disNum':45
+                     },
+                     {
+                         'gallery':'img/03.png',
+                         'likeNum':622,
+                         'disNum':13
 
-                    },
-                    {
-                        'gallery':'img/05.png',
-                        'likeNum':789,
-                        'disNum':59
-                    },
-                    {
-                        'gallery':'img/06.jpg',
-                        'likeNum':254,
-                        'disNum':18
+                     },
+                     {
+                         'gallery':'img/04.jpg',
+                         'likeNum':156,
+                         'disNum':45
 
-                    },
+                     },
+                     {
+                         'gallery':'img/05.png',
+                         'likeNum':789,
+                         'disNum':59
+                     },
+                     {
+                         'gallery':'img/06.jpg',
+                         'likeNum':254,
+                         'disNum':18
 
-                    {
-                        'gallery':'img/14.jpg',
-                        'likeNum':526,
-                        'disNum':75
+                     },
 
-                    },
-                    {
-                        'gallery':'img/15.png',
-                        'likeNum':713,
-                        'disNum':27
+                     {
+                         'gallery':'img/14.jpg',
+                         'likeNum':526,
+                         'disNum':75
 
-                    },
-                    {
-                        'gallery':'img/16.png',
-                        'likeNum':984,
-                        'disNum':154
+                     },
+                     {
+                         'gallery':'img/15.png',
+                         'likeNum':713,
+                         'disNum':27
 
-                    },
-                    {
-                        'gallery':'img/07.png',
-                        'likeNum':526,
-                        'disNum':75
+                     },
+                     {
+                         'gallery':'img/16.png',
+                         'likeNum':984,
+                         'disNum':154
 
-                    },
-                    {
-                        'gallery':'img/08.jpg',
-                        'likeNum':718,
-                        'disNum':43
+                     },
+                     {
+                         'gallery':'img/07.png',
+                         'likeNum':526,
+                         'disNum':75
 
-                    },
-                    {
-                        'gallery':'img/17.jpg',
-                        'likeNum':535,
-                        'disNum':17
+                     },
+                     {
+                         'gallery':'img/08.jpg',
+                         'likeNum':718,
+                         'disNum':43
 
-                    },
-                    {
-                        'gallery':'img/18.png',
-                        'likeNum':783,
-                        'disNum':29
+                     },
+                     {
+                         'gallery':'img/17.jpg',
+                         'likeNum':535,
+                         'disNum':17
 
-                    },
-                    {
-                        'gallery':'img/19.jpg',
-                        'likeNum':589,
-                        'disNum':53
+                     },
+                     {
+                         'gallery':'img/18.png',
+                         'likeNum':783,
+                         'disNum':29
 
-                    },
-                    {
-                        'gallery':'img/20.jpg',
-                        'likeNum':189,
-                        'disNum':15
+                     },
+                     {
+                         'gallery':'img/19.jpg',
+                         'likeNum':589,
+                         'disNum':53
 
-                    },
-                    {
-                        'gallery':'img/21.png',
-                        'likeNum':897,
-                        'disNum':88
+                     },
+                     {
+                         'gallery':'img/20.jpg',
+                         'likeNum':189,
+                         'disNum':15
 
-                    },
+                     },
+                     {
+                         'gallery':'img/21.png',
+                         'likeNum':897,
+                         'disNum':88
 
-                    {
-                        'gallery':'img/24.png',
-                        'likeNum':698,
-                        'disNum':59
+                     },
 
-                    },
-                    {
-                        'gallery':'img/22.png',
-                        'likeNum':235,
-                        'disNum':11
+                     {
+                         'gallery':'img/24.png',
+                         'likeNum':698,
+                         'disNum':59
 
-                    },
+                     },
+                     {
+                         'gallery':'img/22.png',
+                         'likeNum':235,
+                         'disNum':11
+
+                     },
 
 
 
-                    {
-                        'gallery':'img/01.png',
-                        'likeNum':312,
-                        'disNum':17
+                     {
+                         'gallery':'img/01.png',
+                         'likeNum':312,
+                         'disNum':17
 
-                    },
-                    {
-                        'gallery':'img/23.jpg',
-                        'likeNum':859,
-                        'disNum':46
+                     },
+                     {
+                         'gallery':'img/23.jpg',
+                         'likeNum':859,
+                         'disNum':46
 
-                    },
-                    {
-                        'gallery':'img/25.png',
-                        'likeNum':742,
-                        'disNum':16
+                     },
+                     {
+                         'gallery':'img/25.png',
+                         'likeNum':742,
+                         'disNum':16
 
-                    }
+                     }
 
-                ];
-            },300)
+                 ];
+             },300)
+
+
 
 
         };

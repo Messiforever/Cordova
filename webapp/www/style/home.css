@@ -1,0 +1,287 @@
+html{
+    overflow: auto!important;
+}
+body{
+    width: 100%;
+    height: 100%;
+
+}
+.HomeContainer{
+    position: static;
+    margin-top: 1.7rem;
+}
+ion-refresher{
+    font-size: 0.5rem;
+}
+.homeNav{
+    width: 100%;
+    height: 1rem;
+    background-color: #444444;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+.homeNav > a{
+    display: block;
+    height: 100%;
+    text-align: center;
+    line-height: 1rem;
+
+}
+
+.homeNav > a:first-child{
+    position: absolute;
+    top: 0;
+    left: 0.1rem;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.6);
+}
+.homeNav > a:nth-child(2){
+    margin: 0 auto;
+    font-size: 0.5rem;
+    color: white;
+    font-family: "Times New Roman";
+}
+.homeNav > a:last-child{
+    position: absolute;
+    top: 0;
+    right: 0.1rem;
+    font-size: 0.4rem;
+    color: rgba(255,255,255,0.6);
+
+}
+.homeNav > a:hover,.homeNav > a:checked,.homeNav > a:focus{
+    color: white;
+}
+.navContent{
+    margin-top: 1rem;
+    width: 100%;
+    height: calc(100% - 1rem - 0.3rem - 1rem);
+    background-color: rgb(47,47,47);
+    margin-bottom: -1rem;
+}
+.navContent > div{
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    height: 0.8rem;
+    font-size: 0.4rem;
+    line-height: 0.8rem;
+    color: rgba(255,255,255,0.6);
+    padding-left: 0.2rem;
+    position: relative;
+}
+.navContent > div:hover{
+    color: white;
+}
+.navContent > div:nth-child(1){
+    height: 1.2rem;
+    padding: 0.15rem 0.2rem;
+
+}
+.navContent > div:nth-child(1) > input{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.1rem;
+    font-size: 0.4rem;
+    text-align: center;
+    line-height: 0.9rem;
+}
+.navContent > div:nth-child(8) >a{
+    display: block;
+    position: absolute;
+    right: 0.2rem;
+    top:0;
+    color: rgba(255,255,255,0.6);
+}
+.navContent > div:last-child{
+    height: 1rem;
+    color: white;
+    line-height: 1rem;
+    font-size: 0.35rem;
+}
+.bottomNav{
+    width: 100%;
+    height: 0.7rem;
+    margin-top: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    background: rgba(255,255,255,0.6);
+    position: relative;
+    line-height: 0.7rem;
+
+
+}
+.bottomNav > a {
+    display: block;
+    position: absolute;
+    right: 0.15rem;
+    top:0;
+    color: rgb(68,68,68);
+    font-size: 0.5rem;
+
+
+}
+.bottomNav > div{
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+    text-align: center;
+    font-size: 0.3rem;
+}
+.bottomNav > div >a{
+    margin-left: 0.2rem;
+    margin-right: 0.1rem;
+    color: #4d4d4d;
+}
+.bottomNav > div >label{
+    font-size: 0.2rem;
+    color: #7D8285;
+}
+.top{
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: rgba(0,0,0,0.3);
+    color: white;
+    font-size: 0.6rem;
+    text-align: center;
+    line-height: 0.8rem;
+    position: fixed;
+    right: 0.2rem;
+    bottom: 1.2rem;
+    border-radius: 50%;
+
+}
+.cardContainer{
+    width: 100%;
+    height: auto;
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: #f2f2f2;
+    overflow: hidden;
+    margin-bottom: 1.2rem;
+}
+
+.cardContainer >.card{
+    width: 45%;
+    height: 3.2rem;
+    float: left;
+    background: #fff;
+    border-radius: 0.06rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    margin: 0.2rem 2.5% 0;
+
+}
+
+.cardContainer >.card >.gallery{
+    width: 100%;
+    height: 80%;
+    background-color: #ffffff;
+    border-top-left-radius:0.06rem;
+    border-top-right-radius:0.06rem;
+
+}
+.cardContainer >.card >.gallery >img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius:0.06rem;
+    border-top-right-radius:0.06rem;
+}
+.cardContainer >.card >.like{
+    width: 100%;
+    height: 20%;
+    background-color: #ffffff;
+    border-top: 0.01rem solid rgba(0,0,0,0.3);
+    border-bottom-right-radius:0.06rem;
+    border-bottom-left-radius:0.06rem;
+    position: relative;
+    text-align: center;
+    line-height: 0.64rem;
+    overflow: hidden;
+
+}
+.like > div:first-child{
+    width: 49%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.like > div:first-child > a,.like > div:last-child > a{
+
+    font-size: 0.3rem;
+    display: block;
+    margin: 0 auto 0.3rem;
+    height: 100%;
+    color: rgb(168,168,168);
+}
+
+.like > div > a > label{
+    margin-left: 0.2rem;
+    font-size: 0.5rem;
+}
+.like > div:last-child{
+    width: 49%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.like > div:first-child > a > label{
+    color: #3F83AA;
+}
+.like > div:last-child > a > label{
+    color: #eA4C89;
+}
+footer{
+    background-color: #38495d;
+    width: 100%;
+    height: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+}
+footer > a{
+    display: block;
+    float: left;
+    width: 20%;
+    height: 1rem;
+    font-size: 0.6rem;
+    line-height: 1rem;
+    color: #87919D;
+    text-align: center;
+}
+footer > a:hover,footer > a:focus,footer > a:checked{
+    color: white;
+}
+
+
+#allmap {
+    width:100%;
+    /*margin-bottom: 1rem;*/
+
+}
+.geolocation{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    position: fixed;
+    left: 0.2rem;
+    bottom: 1.2rem;
+    background-color: white;
+    border: 0.01rem solid rgba(0,0,0,0.1);
+    line-height: 1rem;
+    text-align: center;
+    font-size: 0.4rem;
+}
+.mapMax{
+    left: 1.4rem;
+}
+.mapMin{
+    left: 2.6rem;
+}
+
+.geolocation:hover{
+    color: red;
+}

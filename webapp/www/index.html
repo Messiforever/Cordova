@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 阿里高清方案 -->
+    <script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);
+    flex(100, 1);</script>
+    <!-- 字形图标 -->
+    <!--<script src="https://use.fontawesome.com/f47f4563cb.js"></script>-->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        *:before, *:after {
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+            border: 0 none;
+            font-size: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            vertical-align: baseline;
+
+            /* 在X5新内核Blink中，在排版页面的时候，会主动对字体进行放大，会检测页面中的主字体，当某一块字体在我们的判定规则中，认为字号较小，并且是页面中的主要字体，就会采取主动放大的操作。然而这不是我们想要的，可以采取给最大高度解决 */
+            max-height: 100000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        em, strong {
+            font-style: normal;
+        }
+
+        ul, ol, li {
+            list-style: none;
+        }
+
+        body {
+            font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","\5FAE\8F6F\96C5\9ED1",Arial,sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background-color: #f2f2f2;
+            font-size: 0.24rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+    </style>
+    <link rel="stylesheet" href="lib/ionic/css/ionic.min.css">
+    <link rel="stylesheet" href="style/home.css">
+
+</head>
+<body ng-app="myApp" ng-controller="myAppController">
+<nav class='homeNav'>
+    <a class='ion-navicon-round'ng-click='shouNavContent()'></a>
+    <a>Messi</a>
+    <a>Sign in</a>
+    </nav>
+<div class='navContent'  ng-hide='showBool' >
+    <div><input type='text' placeholder='Search'></div>
+    <div>Shots</div>
+    <div>Blog</div>
+    <div>Podcast</div>
+    <div>Mettups</div>
+    <div>Jobs</div>
+    <div>Hiring</div>
+    <div>More <a class='ion-chevron-right'></a></div>
+    <div>Looking to hire a designer?<a>Learn more</a></div>
+    </div>
+<div class='bottomNav'>
+    <div><a href=''>Popular</a><label class='ion-chevron-down'></label><a href=''>Shots</a><label class='ion-chevron-down'></label><a href=''>Now</a><label class='ion-chevron-down'></label></div>
+    <a class='ion-grid' on-tap='ChangeView()'></a>
+    </div>
+    <ion-content class="HomeContainer">
+        <ion-refresher pulling-icon="ion-refresh" pulling-text="下拉刷新" refreshing-text="刷新成功" on-refresh="doRefresh()"></ion-refresher>
+        <ui-view></ui-view>
+    </ion-content>
+    <div class="top ion-chevron-up" ></div>
+    <footer>
+        <a class='ion-edit'></a>
+        <a class='ion-search'></a>
+        <a class='ion-home'  ui-sref="home" id="home"></a>
+        <a class='ion-person'></a>
+        <a class='ion-navigate' ui-sref="map" id="map" on-tap="showMap()"></a>
+    </footer>
+</body>
+<script src="lib/ionic/js/ionic.bundle.min.js"></script>
+<script src="scripts/index.js"></script>
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=OMnEiOiSwNZ44O4Go6a8E6DZYFb0dq60"></script>
+<script src="cordova.js"></script>
+<script src="scripts/home_directive.js"></script>
+<script src="scripts/scroll.js"></script>
+
+</html>

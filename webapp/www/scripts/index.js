@@ -5,24 +5,52 @@
             if(tostate.name == "map"){
                 document.querySelector('.homeNav').style.visibility = "hidden";
                 document.querySelector('.bottomNav').style.visibility = "hidden";
-
                 setTimeout(function () {
-                    var map = new BMap.Map("allmap");
-                    map.centerAndZoom(new BMap.Point(116.331398,39.897445),13);
-                    map.enableScrollWheelZoom(true);
-                    // 用经纬度设置地图中心点
-                    map.clearOverlays();
-                    var new_point = new BMap.Point(116.331398,39.897445);
-                    var marker = new BMap.Marker(new_point);  // 创建标注
-                    map.addOverlay(marker);              // 将标注添加到地图中
-                    map.panTo(new_point);
+
+
+                    // if(!localData) {
+                        var map = new BMap.Map("allmap");
+                        console.log(map);
+                        map.centerAndZoom(new BMap.Point(116.331398,39.897445),13);
+
+                        map.enableScrollWheelZoom(true);
+                        // 用经纬度设置地图中心点
+                        map.clearOverlays();
+                        var new_point = new BMap.Point(116.331398,39.897445);
+                        var marker = new BMap.Marker(new_point);  // 创建标注
+                        map.addOverlay(marker);              // 将标注添加到地图中
+                        map.panTo(new_point);
+                    //     var localMap = JSON.stringify(map);
+                    //     console.log("localMap:"+localMap);
+                    //     localStorage.setItem('localData',localMap);
+                    //
+                    // var localData=localStorage.getItem('localData');
+                    //       localData = JSON.parse(localData);
+                    //       console.log(localData);
+                    // }else {
+                    //
+                    //
+                    //     try{
+                    //         $scope.$digest();
+                    //     }catch (e){}
+                    // }
+
+
+
+
+
+
+
+
+
+
+
+
                 },100);
                 setTimeout(function () {
                     var allmap = document.querySelector('#allmap');
                     document.querySelector('.top').style.visibility = "hidden";
                     document.querySelector('#map').style.color = "white";
-
-                    console.log(allmap);
                     var winHeight=0;
                     if (window.innerHeight){
                         winHeight = window.innerHeight;}
@@ -348,39 +376,39 @@
                 // alert((JSON.stringify(result, null, 4)).latitude);
             }, function (error) {
             });};
-     $scope.showMap = function () {
-            // var map = new BMap.Map("allmap");
-            // var point = new BMap.Point( $scope.address[0],$scope.address[1]);
-            // map.centerAndZoom(point,12);
-            // var geoc = new BMap.Geocoder();
-            //
-            // map.addEventListener("click", function(e){
-            //     var pt = e.point;
-            //     geoc.getLocation(pt, function(rs){
-            //         var addComp = rs.addressComponents;
-            //         alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
-            //     });
-            // });
-            // 百度地图API功能
-            var map = new BMap.Map("allmap");
-            map.centerAndZoom(new BMap.Point(116.331398,39.897445),14);
-            map.enableScrollWheelZoom(true);
-
-            // 用经纬度设置地图中心点
-
-
-                    map.clearOverlays();
-                    var new_point = new BMap.Point(116.331398,39.897445);
-                    var marker = new BMap.Marker(new_point);  // 创建标注
-                    map.addOverlay(marker);              // 将标注添加到地图中
-                    map.panTo(new_point);
-
-
-
-
-
-
-        };
+     // $scope.showMap = function () {
+     //        // var map = new BMap.Map("allmap");
+     //        // var point = new BMap.Point( $scope.address[0],$scope.address[1]);
+     //        // map.centerAndZoom(point,12);
+     //        // var geoc = new BMap.Geocoder();
+     //        //
+     //        // map.addEventListener("click", function(e){
+     //        //     var pt = e.point;
+     //        //     geoc.getLocation(pt, function(rs){
+     //        //         var addComp = rs.addressComponents;
+     //        //         alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
+     //        //     });
+     //        // });
+     //        // 百度地图API功能
+     //        var map = new BMap.Map("allmap");
+     //        map.centerAndZoom(new BMap.Point(116.331398,39.897445),14);
+     //        map.enableScrollWheelZoom(true);
+     //
+     //        // 用经纬度设置地图中心点
+     //
+     //
+     //                map.clearOverlays();
+     //                var new_point = new BMap.Point(116.331398,39.897445);
+     //                var marker = new BMap.Marker(new_point);  // 创建标注
+     //                map.addOverlay(marker);              // 将标注添加到地图中
+     //                map.panTo(new_point);
+     //
+     //
+     //
+     //
+     //
+     //
+     //    };
      $scope.doRefresh = function() {
 
              setTimeout(function () {
